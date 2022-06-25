@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public PlayerMovement movement;
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "Obstacle")
+        if (collision.collider.CompareTag("Obstacle"))
         {
-            Debug.Log("hit");
+            movement.enabled = false;
         }
     }
 }

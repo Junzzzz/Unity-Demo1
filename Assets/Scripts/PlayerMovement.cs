@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         // 添加前进力
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if (Input.GetKey("d")) rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
-        if (Input.GetKey("a")) rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+        if (Input.GetKey("d")) rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        if (Input.GetKey("a")) rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 }
